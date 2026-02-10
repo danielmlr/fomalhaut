@@ -1,0 +1,46 @@
+---
+import { getLangFromUrl, useTranslatedPath, useTranslations } from "@i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+
+const items = [
+	{
+		title: "Strategie & Konzeption",
+		description: "Analyse & Blueprints",
+		class: "md:col-span-2 md:row-span-1",
+	},
+	{
+		title: "Individualsoftware & Web-Apps",
+		description: "Fullstack Dev",
+		class: "md:col-span-1 md:row-span-1",
+	},
+	{
+		title: "IT-Consulting",
+		description: "Infrastruktur & Tech-Stack",
+		class: "md:col-span-1 md:row-span-1",
+	},
+	{
+		title: "Local Identity",
+		description: "Munich-based, global standards",
+		class: "md:col-span-2 md:row-span-1",
+	},
+];
+---
+
+<section id="bento" class="py-12 px-5">
+	<div class="grid grid-cols-1 gap-4 md:grid-cols-4 md:grid-rows-2 auto-rows-[250px]">
+		{
+			items.map((item) => (
+				<div class={`group relative flex flex-col justify-end overflow-hidden rounded-3xl bg-zinc-900 p-8 hover:bg-zinc-800 transition-colors duration-300 ${item.class}`}>
+					<div class="z-10 flex flex-col gap-2">
+						<h3 class="text-2xl font-light uppercase text-platinum">{item.title}</h3>
+						<p class="text-cobalt">{item.description}</p>
+					</div>
+					<div class="absolute inset-0 z-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+				</div>
+			))
+		}
+	</div>
+</section>

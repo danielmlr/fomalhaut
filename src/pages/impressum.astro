@@ -1,0 +1,46 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<BaseLayout>
+	<section class="py-24 px-5 min-h-screen">
+		<div class="mx-auto max-w-2xl text-platinum">
+			<h1 class="mb-8 text-4xl font-light uppercase">Impressum</h1>
+
+			<div class="space-y-6">
+				<div>
+					<h2 class="text-xl font-bold text-cobalt mb-2">Angaben gemäß § 5 TMG</h2>
+					<p>Studio 089</p>
+					<p>Volkartstraße 24</p>
+					<p>80634 München</p>
+				</div>
+
+				<div>
+					<h2 class="text-xl font-bold text-cobalt mb-2">Kontakt</h2>
+					<p>E-Mail: hello@studio089.com</p>
+				</div>
+
+				<div>
+					<h2 class="text-xl font-bold text-cobalt mb-2">Vertreten durch</h2>
+					<p>Daniel Patrick Müller</p>
+				</div>
+
+                <div>
+					<h2 class="text-xl font-bold text-cobalt mb-2">Umsatzsteuer-ID</h2>
+                    <p>Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz: <br/> (Folgt nach Zuteilung)</p>
+                </div>
+
+				<div>
+					<h2 class="text-xl font-bold text-cobalt mb-2">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+					<p>Daniel Patrick Müller</p>
+					<p>Volkartstraße 24</p>
+					<p>80634 München</p>
+				</div>
+			</div>
+		</div>
+	</section>
+</BaseLayout>
